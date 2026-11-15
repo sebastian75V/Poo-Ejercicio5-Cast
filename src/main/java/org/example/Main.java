@@ -8,7 +8,7 @@ public class Main {
 
         System.out.println("=== DEMOSTRACION DE CASTING Y CONVERSIONES ===");
 
-        // 1. DE STRING A PRIMITIVOS (Parsing)
+        // 1. DE STRING A PRIMITIVOS
         System.out.print("Ingrese el precio del producto (ej. 19.99): ");
         String textoPrecio = sc.nextLine().trim();
 
@@ -22,25 +22,25 @@ public class Main {
         int cantidad = Integer.parseInt(textoCantidad);         // String -> int
         boolean tieneDescuento = Boolean.parseBoolean(textoDescuento); // String -> boolean
 
-        System.out.println("\n--- 1. String a Primitivos ---");
+        System.out.println("--- 1. String a Primitivos ---");
         System.out.println("Precio (double): " + precio);
         System.out.println("Cantidad (int): " + cantidad);
         System.out.println("Descuento (boolean): " + tieneDescuento);
 
-        // 2. CASTING IMPLICITO (De tipo pequeno a grande: int -> double)
+        // 2. CASTING IMPLICITO De tipo pequeno a grande: int a double
         // Java lo hace automaticamente porque un double tiene mas capacidad que un int
         double cantidadDecimal = cantidad;
         double subtotal = precio * cantidadDecimal;
 
-        System.out.println("\n--- 2. Casting Implicito (int -> double) ---");
+        System.out.println("--- 2. Casting Implicito int a double ---");
         System.out.println("Cantidad convertida automaticamente a double: " + cantidadDecimal);
         System.out.println("Subtotal calculado: $" + subtotal);
 
-        // 3. CASTING EXPLICITO (De tipo grande a pequeno: double -> int)
+        // 3. CASTING EXPLICITODe tipo grande a pequeno: double a int
         // Se fuerza con (int) y se pierden los decimales (truncamiento)
         int subtotalSinCentavos = (int) subtotal;
 
-        System.out.println("\n--- 3. Casting Explicito (double -> int) ---");
+        System.out.println("--- 3. Casting Explicito double a int ---");
         System.out.println("Subtotal original (double): $" + subtotal);
         System.out.println("Subtotal truncado (int): $" + subtotalSinCentavos);
 
@@ -48,8 +48,8 @@ public class Main {
         String subtotalTexto = String.valueOf(subtotal);
         String puntosGanadosTexto = Integer.toString(subtotalSinCentavos * 10);
 
-        System.out.println("\n--- 4. Primitivos a String ---");
-        System.out.println("Subtotal como String: \"" + subtotalTexto + "\" (Longitud: " + subtotalTexto.length() + " caracteres)");
-        System.out.println("Puntos ganados como String: \"" + puntosGanadosTexto + "\"");
+        System.out.println("--- 4. Primitivos a String ---");
+        System.out.println("Subtotal como String: " + subtotalTexto + " (Longitud: " + subtotalTexto.length() + " caracteres)");
+        System.out.println("Puntos ganados como String: " + puntosGanadosTexto + "");
     }
 }
